@@ -1,4 +1,4 @@
-# Project Title
+#Server-Sequelize
 
 Short description or tagline about your project.
 
