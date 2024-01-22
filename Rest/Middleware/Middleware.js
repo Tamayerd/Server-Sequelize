@@ -8,26 +8,26 @@ import Maintance from "../Routes/MaintanceReports.js";
 import Fault from "../Routes/FaultCode.js";
 import Dowload from "../Routes/DowloadFile.js"
 
-app.use((req, res, next) => {
-console.log(req.headers)
-  const authHeader = req.headers.authorization;
+// app.use((req, res, next) => {
+// console.log(req.headers)
+//   const authHeader = req.headers.authorization;
 
-  if (!authHeader) {
-    return res.status(401).json({ message: "Missing authorization header" });
-  }
+//   if (!authHeader) {
+//     return res.status(401).json({ message: "Missing authorization header" });
+//   }
 
-  const token = authHeader.split(" ")[1];
+//   const token = authHeader.split(" ")[1];
 
-  try {
-    const payload = verifyToken(token);
-    req.user = payload;
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: "Invalid token" });
-  }
-});
+//   try {
+//     const payload = verifyToken(token);
+//     req.user = payload;
+//     next();
+//   } catch (err) {
+//     return res.status(401).json({ message: "Invalid token" });
+//   }
+// });
 
-Routes
+// Routes
 
 app.use("/history")
 app.use("/user", UserRouter);
